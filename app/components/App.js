@@ -85,8 +85,16 @@ const ShowList = (props) => {
                 />
               </a>
             <span className='showOverview'>{show.overview}</span>
-              <span>Vote average: {show.vote_average}</span>
-              <span>Vote count: {show.vote_count}</span>
+              <div className='voteInfo'>
+                <div className='voteItem'>
+                  <p>Vote average</p>
+                  <p>{show.vote_average}</p>
+                </div>
+                <div className='voteItem'>
+                  <p>Vote count</p>
+                  <p>{show.vote_count}</p>
+                </div>
+              </div>
             </div>
           </li>
         )
