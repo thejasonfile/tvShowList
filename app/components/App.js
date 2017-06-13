@@ -49,17 +49,18 @@ class App extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor='newShow'>Add a New Show</label>
+          <label htmlFor='newShow'>Get info for a TV Show</label>
           <input
             ref={(input) => {this.newShowInput = input;}}
             type='text'
             id="newShow"
             value={this.state.newShow}
             onChange={this.handleChange}
+            placeholder="Search by TV Show Title"
           />
-          <button type='submit'>Submit</button>
+        <button type='submit'>Search</button>
+        <div className='small'>Data provided by <a href="https://www.themoviedb.org">The Movie DB</a></div>
         </form>
-        <h2>Shows I watch</h2>
         <div>
           <ShowList shows={this.state.tvShows}/>
         </div>

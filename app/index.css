@@ -189,6 +189,15 @@ hr {
   margin: 1.5em 0; }
 
 /* common.sass */
+body {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  body::after {
+    clear: both;
+    content: "";
+    display: block; }
+
 li {
   list-style: none;
   margin-bottom: 20px; }
@@ -196,14 +205,39 @@ li {
 /* showInfo.sass */
 .showInfo {
   display: flex;
-  align-items: center; }
-  .showInfo img,
+  align-items: center;
+  border: 1px solid black;
+  padding: 5px; }
   .showInfo span {
-    margin: 0 10px; }
-  .showInfo img {
+    margin: 0 20px; }
+  .showInfo img, .showInfo a {
     max-height: 300px; }
   .showInfo .showOverview {
-    flex-shrink: 1;
-    max-width: 400px; }
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    flex-shrink: 1; }
+    .showInfo .showOverview:last-child {
+      margin-right: 0; }
+
+/* searchForm.sass */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px; }
+  form label {
+    font-size: 24px; }
+  form input[type="text"] {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%; }
+    form input[type="text"]:last-child {
+      margin-right: 0; }
+  form .small {
+    font-size: 12px;
+    margin-top: 5px; }
 
 /*# sourceMappingURL=index.css.map */
