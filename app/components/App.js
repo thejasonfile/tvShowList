@@ -22,10 +22,21 @@ class App extends Component {
   }
 
   getShowData(show) {
-    api.fetchTVShow(show)
-      .then((fetchedShow) => {
-        this.setState({tvShows: [...this.state.tvShows, fetchedShow]})
-      })
+    if(show){
+      api.fetchTVShow(show)
+        .then((fetchedShow) => {
+          fetchedShow
+            ? this.setState({tvShows: [...this.state.tvShows, fetchedShow]})
+            : this.apiError()
+        })
+    } else {
+      this.apiError();
+    }
+
+  }
+
+  apiError() {
+    alert('Problem with search, please try again.')
   }
 
   handleSubmit(e) {
