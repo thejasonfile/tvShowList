@@ -24,14 +24,14 @@ class App extends Component {
   getShowData(show) {
     api.fetchTVShow(show)
       .then((fetchedShow) => {
-        this.setState({ fetchedShow })
+        this.setState({tvShows: [...this.state.tvShows, fetchedShow]})
       })
   }
 
   handleSubmit(e) {
     e.preventDefault();
     this.getShowData(this.state.newShow)
-    this.setState({tvShows: [...this.state.tvShows, this.state.newShow], newShow: ''});
+    this.setState({newShow: ''});
     this.newShowInput.focus();
   }
 
@@ -51,13 +51,7 @@ class App extends Component {
         </form>
         <h2>Shows I watch</h2>
         <div>
-          <ul>
-            {this.state.tvShows.map((show, i) => {
-              return(
-                <li key={i}>{show}</li>
-              )
-            })}
-          </ul>
+          <ShowList shows={this.state.tvShows}/>
         </div>
       </div>
     )
@@ -67,7 +61,26 @@ class App extends Component {
 const ShowList = (props) => {
   let baseUrl = 'https://image.tmdb.org/t/p/w640';
   return (
-    <div>ShowList</div>
+    <ul className='showList'>
+      {props.shows.map((show) => {
+        return (
+          <li key={show.id}>
+            <div className='showInfo'>
+              <a href={`https://www.themoviedb.org/tv/${show.id}`}>
+                <img
+                  className='showPoster'
+                  src={`${baseUrl}${show.poster_path}`}
+                  alt={`Poster for ${show.name}`}
+                />
+              </a>
+            <span className='showOverview'>{show.overview}</span>
+              <span>Vote average: {show.vote_average}</span>
+              <span>Vote count: {show.vote_count}</span>
+            </div>
+          </li>
+        )
+      })}
+    </ul>
   )
 }
 

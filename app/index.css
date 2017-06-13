@@ -2,4 +2,32 @@ body {
   background-color: green;
 }
 
+li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.showList {
+
+}
+
+.showInfo {
+  display: flex;
+  align-items: center;
+}
+
+.showInfo img,
+.showInfo span {
+  margin: 0 10px;
+}
+
+.showInfo .showOverview {
+  flex-shrink: 1;
+  max-width: 400px;
+}
+
+.showInfo img {
+  max-height: 300px;
+}
+
 /* This is a test for index.css.  This code can be removed. */
