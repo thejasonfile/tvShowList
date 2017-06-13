@@ -191,14 +191,9 @@ hr {
 
 /* common.sass */
 body {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #ecd97f; }
-  body::after {
-    clear: both;
-    content: "";
-    display: block; }
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background-color: #4abde8;
+  background-image: url("../app/assets/tv_icon.png"); }
 
 li {
   list-style: none;
@@ -208,7 +203,7 @@ li {
 .showInfo {
   display: flex;
   align-items: center;
-  border: 1px solid #000;
+  border: 2px solid #000;
   padding: 5px;
   background-color: #fff; }
   .showInfo span {
@@ -242,18 +237,27 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  background-color: #fff;
+  border: 2px solid #000; }
   form label {
     font-size: 24px; }
   form input[type="text"] {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 48.82117%; }
+    width: 48.82117%;
+    border: 2px solid #000; }
     form input[type="text"]:last-child {
       margin-right: 0; }
+  form button[type="submit"] {
+    background-color: #4abde8;
+    color: #000;
+    border: 2px solid #000; }
   form .small {
     font-size: 12px;
     margin-top: 5px; }
+    form .small a {
+      color: #000; }
 
 /*# sourceMappingURL=index.css.map */

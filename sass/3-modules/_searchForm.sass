@@ -5,13 +5,24 @@ form
   flex-direction: column
   align-items: center
   margin-bottom: 10px
+  background-color: $formColor
+  +standardBorder
 
   label
     font-size: $base-font * 1.5
 
   input[type="text"]
     +span-columns(6)
+    +standardBorder
+
+  button[type="submit"]
+    background-color: $bodyColor
+    color: $borderColor
+    +standardBorder
 
   .small
     font-size: $base-font * 0.75
     margin-top: 5px
+
+    a
+      color: $borderColor

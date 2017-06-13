@@ -47,23 +47,26 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor='newShow'>Get info for a TV Show</label>
-          <input
-            ref={(input) => {this.newShowInput = input;}}
-            type='text'
-            id="newShow"
-            value={this.state.newShow}
-            onChange={this.handleChange}
-            placeholder="Search by TV Show Title"
-          />
-        <button type='submit'>Search</button>
-        <div className='small'>Data provided by <a href="https://www.themoviedb.org">The Movie DB</a></div>
-        </form>
-        <div>
+      <div className='container'>
+        <div className='header'>
+          <form onSubmit={this.handleSubmit}>
+            <label htmlFor='newShow'>Get info for a TV Show</label>
+            <input
+              ref={(input) => {this.newShowInput = input;}}
+              type='text'
+              id='newShow'
+              value={this.state.newShow}
+              onChange={this.handleChange}
+              placeholder='Search by TV Show Title'
+            />
+          <button type='submit'>Search</button>
+          <div className='small'>Data provided by <a href="https://www.themoviedb.org">The Movie DB</a></div>
+          </form>
+        </div>
+        <div className='content'>
           <ShowList shows={this.state.tvShows}/>
         </div>
+        <div className='footer'></div>
       </div>
     )
   }
