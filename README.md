@@ -1,5 +1,5 @@
-# reactScaffold
+# tvShowList
 
-Basic React.js scaffold with Babel and Webpack configured.
+When you need just a brief synopsis on a TV show.  Enter a TV Show title and return data from [The Movie DB API] (http://themoviedb.org).
 
-This is based on the files configured in the [React Fundamentals](https://reacttraining.com/online/react-fundamentals) course at [ReactTraining.com](https://reacttraining.com)
+Built with React.js and SASS.
