@@ -12,6 +12,7 @@ class App extends Component {
     // this = 'App' component
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.removeShow = this.removeShow.bind(this);
   }
 
   handleChange(e) {
@@ -49,8 +50,11 @@ class App extends Component {
     this.newShowInput.focus();
   }
 
-  removeShow() {
-    console.log(this)
+  removeShow(id) {
+    var filteredShows = this.state.tvShows.filter((show) => {
+      return show.id !== id
+    })
+    this.setState({tvShows: filteredShows})
   }
 
   render() {
@@ -115,7 +119,7 @@ const Show = (props) => {
             <p>{props.show.vote_count}</p>
           </div>
         </div>
-        <button className='removeButton' onClick={props.removeShow.bind(this)}>X</button>
+        <button className='removeButton' onClick={() => props.removeShow(props.show.id)}>X</button>
       </div>
     </li>
   )
