@@ -6,6 +6,7 @@
   border: 2px solid $borderColor
   padding: 5px
   background-color: $listColor
+  position: relative
 
   span
     margin: 0 20px
@@ -33,3 +34,15 @@
 
       p:last-child
         font-size: $base-font * 2
+
+  .removeButton
+    position: absolute
+    right: 0
+    top: 0
+    background-color: $listColor
+    color: lighten($borderColor, 50%)
+    font-size: $base-font * 2
+    padding: 10px 20px
+
+    &:hover
+      color: lighten($borderColor, 30%)

@@ -205,7 +205,8 @@ li {
   align-items: center;
   border: 2px solid #000;
   padding: 5px;
-  background-color: #fff; }
+  background-color: #fff;
+  position: relative; }
   .showInfo span {
     margin: 0 20px; }
   .showInfo img, .showInfo a {
@@ -231,6 +232,16 @@ li {
         font-size: 22.4px; }
       .showInfo .voteInfo .voteItem p:last-child {
         font-size: 32px; }
+  .showInfo .removeButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    color: gray;
+    font-size: 32px;
+    padding: 10px 20px; }
+    .showInfo .removeButton:hover {
+      color: #4d4d4d; }
 
 /* searchForm.sass */
 form {
@@ -254,6 +265,10 @@ form {
     background-color: #4abde8;
     color: #000;
     border: 2px solid #000; }
+    form button[type="submit"]:active {
+      position: relative;
+      right: 2px;
+      top: 2px; }
   form .small {
     font-size: 12px;
     margin-top: 5px; }

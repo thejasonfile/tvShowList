@@ -24,9 +24,13 @@ class App extends Component {
     if(show){
       api.fetchTVShow(show)
         .then((fetchedShow) => {
-          fetchedShow
-            ? this.setState({tvShows: [...this.state.tvShows, fetchedShow]})
-            : this.apiError()
+          if(fetchedShow) {
+            var tvShows = this.state.tvShows
+            tvShows.unshift(fetchedShow);
+            this.setState({tvShows})
+          } else {
+            this.apiError()
+          }
         })
     } else {
       this.apiError();
@@ -98,7 +102,9 @@ const ShowList = (props) => {
                   <p>{show.vote_count}</p>
                 </div>
               </div>
+              <button className='removeButton'>X</button>
             </div>
+
           </li>
         )
       })}
