@@ -49,6 +49,10 @@ class App extends Component {
     this.newShowInput.focus();
   }
 
+  removeShow() {
+    console.log(this)
+  }
+
   render() {
     return (
       <div className='container'>
@@ -68,7 +72,7 @@ class App extends Component {
           </form>
         </div>
         <div className='content'>
-          <ShowList shows={this.state.tvShows}/>
+          <ShowList shows={this.state.tvShows} removeShow={this.removeShow}/>
         </div>
         <div className='footer'></div>
       </div>
@@ -77,38 +81,43 @@ class App extends Component {
 }
 
 const ShowList = (props) => {
-  let baseUrl = 'https://image.tmdb.org/t/p/w640';
   return (
     <ul className='showList'>
       {props.shows.map((show) => {
         return (
-          <li key={show.id}>
-            <div className='showInfo'>
-              <a href={`https://www.themoviedb.org/tv/${show.id}`}>
-                <img
-                  className='showPoster'
-                  src={`${baseUrl}${show.poster_path}`}
-                  alt={`Poster for ${show.name}`}
-                />
-              </a>
-            <span className='showOverview'>{show.overview}</span>
-              <div className='voteInfo'>
-                <div className='voteItem'>
-                  <p>Vote average</p>
-                  <p>{show.vote_average}</p>
-                </div>
-                <div className='voteItem'>
-                  <p>Vote count</p>
-                  <p>{show.vote_count}</p>
-                </div>
-              </div>
-              <button className='removeButton'>X</button>
-            </div>
-
-          </li>
+          <Show key={show.id} show={show} removeShow={props.removeShow}/>
         )
       })}
     </ul>
+  )
+}
+
+const Show = (props) => {
+  let baseUrl = 'https://image.tmdb.org/t/p/w640';
+  return (
+    <li key={props.show.id}>
+      <div className='showInfo'>
+        <a href={`https://www.themoviedb.org/tv/${props.show.id}`}>
+          <img
+            className='showPoster'
+            src={`${baseUrl}${props.show.poster_path}`}
+            alt={`Poster for ${props.show.name}`}
+          />
+        </a>
+      <span className='showOverview'>{props.show.overview}</span>
+        <div className='voteInfo'>
+          <div className='voteItem'>
+            <p>Vote average</p>
+            <p>{props.show.vote_average}</p>
+          </div>
+          <div className='voteItem'>
+            <p>Vote count</p>
+            <p>{props.show.vote_count}</p>
+          </div>
+        </div>
+        <button className='removeButton' onClick={props.removeShow.bind(this)}>X</button>
+      </div>
+    </li>
   )
 }
 
