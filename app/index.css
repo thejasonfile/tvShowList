@@ -226,6 +226,9 @@ li {
   background-color: #fff;
   border: 2px solid #000; }
   .home button {
+    background-color: #4abde8;
+    color: #000;
+    border: 2px solid #000;
     margin: 10px; }
 
 /* showInfo.sass */
