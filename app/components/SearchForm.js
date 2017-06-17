@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import ShowList from './ShowList';
 import api from '../utils/api';
+import ShowList from './ShowList';
+import Nav from './Nav';
 
 class SearchForm extends Component {
 
@@ -60,6 +61,7 @@ class SearchForm extends Component {
     return (
       <div className='container'>
         <div className='header'>
+          <Nav />
           <form onSubmit={this.handleSubmit}>
             <label htmlFor='newShow'>Get info for a TV Show</label>
             <input
