@@ -1,0 +1,19 @@
+/* popular.sass */
+
+.popular-list
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+
+  .popular-item
+    +box
+    margin: 10px
+
+  .popular-item-content
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    .showName,
+    .showPopularity
+      font-size: $base-font * 1.2
