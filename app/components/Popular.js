@@ -46,7 +46,7 @@ const ShowGrid = (props) => {
                    </a>
                 </li>
                  <li className='showName'>{show.name}</li>
-                 <li className='showPopularity'>{show.popularity}</li>
+                 <li className='showPopularity'>Popularity: {show.popularity.toFixed(2)}</li>
                </ul>
            </li>
          )

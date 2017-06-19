@@ -201,6 +201,13 @@ li {
 img, a {
   max-height: 300px; }
 
+.small {
+  font-size: 12px;
+  margin-top: 5px; }
+
+a {
+  color: #000; }
+
 /* navbar.sass */
 .nav {
   display: flex;
@@ -209,14 +216,17 @@ img, a {
   margin-bottom: 10px;
   padding: 5px;
   background-color: #fff;
-  border: 2px solid #000;
+  border: 2px solid #000; }
+
+.nav-list {
+  display: flex;
   flex-direction: row;
   justify-content: center; }
-  .nav li, .nav a {
+  .nav-list li, .nav-list a {
     color: #000;
     margin: 10px;
     font-size: 22.4px; }
-  .nav .active {
+  .nav-list .active {
     font-weight: bold; }
 
 /* home.sass */
@@ -301,16 +311,12 @@ form {
   form button[type="submit"] {
     background-color: #4abde8;
     color: #000;
-    border: 2px solid #000; }
+    border: 2px solid #000;
+    margin-bottom: 10px; }
     form button[type="submit"]:active {
       position: relative;
       right: 2px;
       top: 2px; }
-  form .small {
-    font-size: 12px;
-    margin-top: 5px; }
-    form .small a {
-      color: #000; }
 
 /* popular.sass */
 .popular-list {
@@ -330,8 +336,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center; }
-    .popular-list .popular-item-content .showName,
-    .popular-list .popular-item-content .showPopularity {
+    .popular-list .popular-item-content .showName {
       font-size: 19.2px; }
 
 /*# sourceMappingURL=index.css.map */

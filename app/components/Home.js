@@ -10,6 +10,7 @@ const Home = () => {
         <Link to='/popular'><button>Popular</button></Link>
         <Link to='/search'><button>Search</button></Link>
       </div>
+      <div className='small'>Data provided by <a href="https://www.themoviedb.org">The Movie DB</a></div>
     </div>
   )
 }
