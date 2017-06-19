@@ -4,7 +4,6 @@ import ShowList from './ShowList';
 import Nav from './Nav';
 
 class SearchForm extends Component {
-
   constructor(props) {
     super(props);
 
