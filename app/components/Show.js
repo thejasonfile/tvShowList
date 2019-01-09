@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Show = (props) => {
-  let baseUrl = 'https://image.tmdb.org/t/p/w640';
+  let baseUrl = 'https://image.tmdb.org/t/p/w500';
   return (
     <li key={props.show.id}>
       <div className='showInfo'>
