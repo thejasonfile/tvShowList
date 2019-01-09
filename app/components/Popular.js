@@ -33,7 +33,7 @@ class Popular extends Component {
 }
 
 const ShowGrid = (props) => {
-  let baseUrl = 'https://image.tmdb.org/t/p/w640';
+  let baseUrl = 'https://image.tmdb.org/t/p/w500';
   return (
     <ul className='popular-list'>
       {props.shows.map((show) => {
